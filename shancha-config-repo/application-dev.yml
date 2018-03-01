@@ -5,5 +5,11 @@
 # datasource
 druid:
   url: jdbc:mysql://172.28.128.3:3306/shancha_system?useUnicode=true&characterEncoding=utf8&useSSL=false
-
+  driver-class: com.mysql.jdbc.Driver
+  username: root
+  password: 123456
+  initial-size: 1
+  min-idle: 1
+  max-active: 20
+  test-on-borrow: true
 
