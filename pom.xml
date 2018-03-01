@@ -6,9 +6,6 @@
     <groupId>com.shancha</groupId>
     <artifactId>shancha-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>shancha-eureka-server</module>
-    </modules>
     <packaging>pom</packaging>
 
     <name>shancha-parent</name>

@@ -7,8 +7,10 @@ spring:
     config:
       server:
         git:
-#          uri: https://git.oschina.net/zhou666/spring-cloud-7simple.git
-#          search-paths: shancha-config-repo
+          uri: https://github.com/qiangw808/shancha-parent.git
+          search-paths: shancha-config-repo
+          username: qiangw808@gmail.com
+          password: ginger810518
 eureka:
   instance:
     hostname: localhost
