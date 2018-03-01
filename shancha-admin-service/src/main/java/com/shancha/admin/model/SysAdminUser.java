@@ -1,9 +1,9 @@
 package com.shancha.admin.model;
 
+import com.shancha.admin.base.BaseEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Table;
-
-import cloud.simple.service.base.BaseEntity;
 
 @Table(name = "`sys_admin_user`")
 public class SysAdminUser  extends BaseEntity {

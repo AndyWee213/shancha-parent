@@ -3,6 +3,8 @@ package com.shancha.admin.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.shancha.admin.util.FastJsonUtils;
+import com.shancha.admin.util.UploadUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import cloud.simple.service.util.FastJsonUtils;
-import cloud.simple.service.util.UploadUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

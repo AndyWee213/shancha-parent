@@ -2,15 +2,14 @@ package com.shancha.admin.web;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.EncryptUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import cloud.simple.service.contants.Constant;
-import cloud.simple.service.domain.SysAdminUserService;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.EncryptUtil;
 
 /**
  * 公共控制器

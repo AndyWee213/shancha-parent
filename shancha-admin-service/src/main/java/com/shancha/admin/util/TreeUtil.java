@@ -3,11 +3,10 @@ package com.shancha.admin.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.shancha.admin.dto.TreeNode;
+import com.shancha.admin.model.SysAdminMenu;
+import com.shancha.admin.model.SysAdminRule;
 import org.apache.commons.collections.CollectionUtils;
-
-import cloud.simple.service.dto.TreeNode;
-import cloud.simple.service.model.SysAdminMenu;
-import cloud.simple.service.model.SysAdminRule;
 
 /**
  * 树工具类
@@ -21,7 +20,7 @@ public class TreeUtil {
      * @param string $root 返回的根节点ID
      * @return List<TreeNode>
      */
-	public static List<TreeNode> listMenuToTree(List<SysAdminMenu> list,Integer rootId) {
+	public static List<TreeNode> listMenuToTree(List<SysAdminMenu> list, Integer rootId) {
 		//创建tree
 		List<TreeNode> tree = new ArrayList<TreeNode>();  
 		if (CollectionUtils.isNotEmpty(list)) {
@@ -61,7 +60,7 @@ public class TreeUtil {
      * @param string $root 返回的根节点ID
      * @return List<TreeNode>
      */
-	public static List<TreeNode> listRuleToTree(List<SysAdminRule> list,Integer rootId) {
+	public static List<TreeNode> listRuleToTree(List<SysAdminRule> list, Integer rootId) {
 		//创建tree
 		List<TreeNode> tree = new ArrayList<TreeNode>();  
 		if (CollectionUtils.isNotEmpty(list)) {

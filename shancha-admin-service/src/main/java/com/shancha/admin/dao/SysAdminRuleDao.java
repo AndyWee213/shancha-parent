@@ -2,12 +2,11 @@ package com.shancha.admin.dao;
 
 import java.util.List;
 
+import com.shancha.admin.model.SysAdminRule;
+import com.shancha.admin.util.MyMapper;
 import org.apache.ibatis.annotations.Param;
 
-import cloud.simple.service.model.SysAdminRule;
-import cloud.simple.service.util.MyMapper;
-
-public interface SysAdminRuleDao extends  MyMapper<SysAdminRule>  {
+public interface SysAdminRuleDao extends MyMapper<SysAdminRule> {
 
 	List<SysAdminRule> selectInIds(@Param("ruleIds") String ruleIds,@Param("status") Integer status);
 

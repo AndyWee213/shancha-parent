@@ -3,12 +3,12 @@ package com.shancha.admin.util;
 import java.util.List;
 import java.util.Map;
 
+import com.shancha.admin.contants.Constant;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
 
-import cloud.simple.service.contants.Constant;
 /**
  * 分类管理
  */
@@ -66,10 +66,10 @@ public class Category {
 	
 	/**
 	 * 递归格式化分类前的字符
-	 * @param pid 分类id
+	 * @param cid 分类id
 	 * @param space 空白
 	 * @param level 级别
-	 * @param p_name 父名称
+	 * @param pname 父名称
 	 * @return
 	 */
 	private void _searchList( Object cid, String space, int level, Object pname){

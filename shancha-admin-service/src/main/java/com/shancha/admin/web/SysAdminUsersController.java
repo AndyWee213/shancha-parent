@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.FastJsonUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,9 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageInfo;
 
-import cloud.simple.service.domain.SysAdminUserService;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

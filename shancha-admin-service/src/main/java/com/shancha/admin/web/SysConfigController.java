@@ -6,15 +6,15 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.shancha.admin.domain.SysSystemConfigService;
+import com.shancha.admin.model.SysSystemConfig;
+import com.shancha.admin.util.FastJsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloud.simple.service.domain.SysSystemConfigService;
-import cloud.simple.service.model.SysSystemConfig;
-import cloud.simple.service.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -31,7 +31,7 @@ public class SysConfigController extends CommonController{
 	
 	@ApiOperation(value = "获取配置", httpMethod="POST")
 	@PostMapping(value = "/configs", produces = {"application/json;charset=UTF-8"})
-	public String configs(@RequestBody(required=false) SysSystemConfig record,HttpServletRequest request) {
+	public String configs(@RequestBody(required=false) SysSystemConfig record, HttpServletRequest request) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		List<SysSystemConfig> configs = sysSystemConfigService.select(record);
 		for (SysSystemConfig c : configs) {

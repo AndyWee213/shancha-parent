@@ -1,15 +1,15 @@
 package com.shancha.admin.model;
 
+import com.shancha.admin.base.BaseEntity;
+
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import cloud.simple.service.base.BaseEntity;
-
 @Table(name = "`sys_admin_rule`")
-public class SysAdminRule  extends BaseEntity{
+public class SysAdminRule  extends BaseEntity {
 	private static final long serialVersionUID = 3783338463831001070L;
 
     /**

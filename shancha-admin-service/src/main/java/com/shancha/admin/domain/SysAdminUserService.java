@@ -1,5 +1,11 @@
 package com.shancha.admin.domain;
 
+import com.shancha.admin.base.BaseServiceImpl;
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.dao.SysAdminUserDao;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.EncryptUtil;
+import com.shancha.admin.util.FastJsonUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,15 +13,9 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageInfo;
 
-import cloud.simple.service.base.BaseServiceImpl;
-import cloud.simple.service.contants.Constant;
-import cloud.simple.service.dao.SysAdminUserDao;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.EncryptUtil;
-import cloud.simple.service.util.FastJsonUtils;
 import tk.mybatis.mapper.common.Mapper;
 @Service
-public class SysAdminUserService extends BaseServiceImpl<SysAdminUser>{
+public class SysAdminUserService extends BaseServiceImpl<SysAdminUser> {
 	@Autowired
 	private SysAdminUserDao sysAdminUserDao;
 	

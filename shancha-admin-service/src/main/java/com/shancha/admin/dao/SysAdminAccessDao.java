@@ -1,7 +1,8 @@
 package com.shancha.admin.dao;
 
-import cloud.simple.service.model.SysAdminAccess;
-import cloud.simple.service.util.MyMapper;
+
+import com.shancha.admin.model.SysAdminAccess;
+import com.shancha.admin.util.MyMapper;
 
 public interface SysAdminAccessDao extends MyMapper<SysAdminAccess> {
 }

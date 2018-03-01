@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.shancha.admin.domain.SysAdminMenuService;
+import com.shancha.admin.model.SysAdminMenu;
+import com.shancha.admin.util.FastJsonUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,9 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloud.simple.service.domain.SysAdminMenuService;
-import cloud.simple.service.model.SysAdminMenu;
-import cloud.simple.service.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -39,7 +39,7 @@ public class SysAdminMenusController extends CommonController{
 	@ApiOperation(value = "列表", httpMethod="GET")
 	@RequestMapping(value = "", produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public String index(@RequestBody(required=false) SysAdminMenu record,HttpServletRequest request) {
+	public String index(@RequestBody(required=false) SysAdminMenu record, HttpServletRequest request) {
 		List<Map<String, Object>> menus = sysAdminMenuService.getDataList(this.getCurrentUser().getId(), record == null ? null : record.getStatus());
 		return FastJsonUtils.resultSuccess(200, "成功", menus);
 	}

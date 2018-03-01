@@ -6,16 +6,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.EncryptUtil;
+import com.shancha.admin.util.FastJsonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import cloud.simple.service.contants.Constant;
-import cloud.simple.service.domain.SysAdminUserService;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.EncryptUtil;
-import cloud.simple.service.util.FastJsonUtils;
 @Component
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	

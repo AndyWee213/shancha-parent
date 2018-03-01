@@ -1,9 +1,9 @@
 package com.shancha.admin.util;
 
+import com.shancha.admin.dto.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import cloud.simple.service.dto.TreeNode;
 
 public class TreeBuilder {
   
@@ -12,7 +12,7 @@ public class TreeBuilder {
      * @param treeNodes 
      * @return 
      */  
-    public static List<TreeNode> buildByRecursive(List<TreeNode> treeNodes) {  
+    public static List<TreeNode> buildByRecursive(List<TreeNode> treeNodes) {
         List<TreeNode> trees = new ArrayList<TreeNode>();  
         for (TreeNode treeNode : treeNodes) {  
         	System.err.println(treeNode);

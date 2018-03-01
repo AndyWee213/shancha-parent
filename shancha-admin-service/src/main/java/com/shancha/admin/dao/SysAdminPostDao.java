@@ -1,7 +1,7 @@
-package cloud.simple.service.dao;
+package com.shancha.admin.dao;
 
-import cloud.simple.service.model.SysAdminPost;
-import cloud.simple.service.util.MyMapper;
+import com.shancha.admin.model.SysAdminPost;
+import com.shancha.admin.util.MyMapper;
 
 public interface SysAdminPostDao extends  MyMapper<SysAdminPost>  {
 }

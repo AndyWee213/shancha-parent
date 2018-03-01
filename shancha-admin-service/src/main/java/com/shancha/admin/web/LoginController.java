@@ -13,6 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.domain.SysAdminMenuService;
+import com.shancha.admin.domain.SysAdminRuleService;
+import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.model.SysAdminRule;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.EncryptUtil;
+import com.shancha.admin.util.FastJsonUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +33,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 
-import cloud.simple.service.contants.Constant;
-import cloud.simple.service.domain.SysAdminMenuService;
-import cloud.simple.service.domain.SysAdminRuleService;
-import cloud.simple.service.domain.SysAdminUserService;
-import cloud.simple.service.model.SysAdminRule;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.EncryptUtil;
-import cloud.simple.service.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -65,7 +65,7 @@ public class LoginController extends CommonController{
 	@ApiOperation(value = "登录", notes = "登录")
 	@ApiImplicitParams({@ApiImplicitParam(name = "record", required=true, dataType = "SysAdminUser")	})
 	@PostMapping(value = "/login", produces = {"application/json;charset=UTF-8"})
-	public String login(@RequestBody SysAdminUser record,HttpServletRequest request) {
+	public String login(@RequestBody SysAdminUser record, HttpServletRequest request) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		if(StringUtils.isBlank(record.getUsername())) {
 			return FastJsonUtils.resultError(-100, "账号不能为空", null);

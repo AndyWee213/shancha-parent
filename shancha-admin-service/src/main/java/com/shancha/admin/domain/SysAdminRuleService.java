@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.shancha.admin.base.BaseServiceImpl;
+import com.shancha.admin.dao.SysAdminGroupDao;
+import com.shancha.admin.dao.SysAdminRuleDao;
+import com.shancha.admin.model.SysAdminGroup;
+import com.shancha.admin.model.SysAdminRule;
+import com.shancha.admin.util.BeanToMapUtil;
+import com.shancha.admin.util.Category;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,16 +18,9 @@ import org.springframework.stereotype.Service;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-import cloud.simple.service.base.BaseServiceImpl;
-import cloud.simple.service.dao.SysAdminGroupDao;
-import cloud.simple.service.dao.SysAdminRuleDao;
-import cloud.simple.service.model.SysAdminGroup;
-import cloud.simple.service.model.SysAdminRule;
-import cloud.simple.service.util.BeanToMapUtil;
-import cloud.simple.service.util.Category;
 import tk.mybatis.mapper.common.Mapper;
 @Service
-public class SysAdminRuleService extends BaseServiceImpl<SysAdminRule>{
+public class SysAdminRuleService extends BaseServiceImpl<SysAdminRule> {
 	
 	@Autowired
 	private SysAdminRuleDao sysAdminRuleDao;
@@ -110,7 +110,6 @@ public class SysAdminRuleService extends BaseServiceImpl<SysAdminRule>{
 	 * 列表页面
 	 * @param userId 用户id
 	 * @param type  类型 tree,其它
-	 * @param status 状态
 	 * @return
 	 */
 	public List<Map<String, Object>> getDataList(Integer userId,String type) {
