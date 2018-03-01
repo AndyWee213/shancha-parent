@@ -1,0 +1,19 @@
+logging:
+  level:
+    tk:
+      mybatis: TRACE
+    com:
+      framework: TRACE
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+mybatis:
+  type-aliases-package: com.shancha.admin.model
+  mapper-locations: classpath*:/mappers/**.xml
+
+mapper:
+  mappers:

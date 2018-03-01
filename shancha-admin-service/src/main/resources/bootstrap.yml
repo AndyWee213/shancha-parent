@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      profile: dev
+      name: application
+    uri: http://${cofig.host:localhost}:${config.port:1111}
+  application:
+    name: shancha-admin-service
+  profiles:
+    active: dev
+    include: swagger
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port:8888}/eureka/
