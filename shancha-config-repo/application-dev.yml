@@ -1,0 +1,9 @@
+# ===================================================================
+# framework specific properties
+# ===================================================================
+
+# datasource
+druid:
+  url: jdbc:mysql://172.28.128.3:3306/shancha_system?useUnicode=true&characterEncoding=utf8&useSSL=false
+
+
