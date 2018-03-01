@@ -3,16 +3,12 @@ server:
 spring:
   application:
     name: shancha-config-server
-#  profiles:
-#    active: native
   cloud:
     config:
       server:
-#        native:
-#          search-locations: ../shancha-config-repo
         git:
-          uri: https://git.oschina.net/zhou666/spring-cloud-7simple.git
-          search-paths: cloud-config-repo
+#          uri: https://git.oschina.net/zhou666/spring-cloud-7simple.git
+#          search-paths: shancha-config-repo
 eureka:
   instance:
     hostname: localhost
