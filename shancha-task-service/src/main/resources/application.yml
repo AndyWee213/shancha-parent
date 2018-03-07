@@ -1,3 +1,9 @@
 spring:
   application:
     name: helloWorld
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          task: DEBUG
