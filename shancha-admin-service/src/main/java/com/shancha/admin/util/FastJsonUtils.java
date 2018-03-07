@@ -130,7 +130,7 @@ public class FastJsonUtils {
 	
 	/**
 	 * 排除字段
-	 * @param args
+     *
 	 */
 	private static String toStringExcludes(Object data,Class<?> type,String ...properties){
 		 PropertyFilter filter = new PropertyFilter() {
