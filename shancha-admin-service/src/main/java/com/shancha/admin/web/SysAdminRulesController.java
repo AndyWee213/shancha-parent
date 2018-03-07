@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloud.simple.service.domain.SysAdminRuleService;
-import cloud.simple.service.model.SysAdminRule;
-import cloud.simple.service.util.FastJsonUtils;
+import com.shancha.admin.domain.SysAdminRuleService;
+import com.shancha.admin.model.SysAdminRule;
+import com.shancha.admin.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

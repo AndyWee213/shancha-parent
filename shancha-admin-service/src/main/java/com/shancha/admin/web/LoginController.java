@@ -25,14 +25,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 
-import cloud.simple.service.contants.Constant;
-import cloud.simple.service.domain.SysAdminMenuService;
-import cloud.simple.service.domain.SysAdminRuleService;
-import cloud.simple.service.domain.SysAdminUserService;
-import cloud.simple.service.model.SysAdminRule;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.EncryptUtil;
-import cloud.simple.service.util.FastJsonUtils;
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.domain.SysAdminMenuService;
+import com.shancha.admin.domain.SysAdminRuleService;
+import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.model.SysAdminRule;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.EncryptUtil;
+import com.shancha.admin.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

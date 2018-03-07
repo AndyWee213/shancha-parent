@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageInfo;
 
-import cloud.simple.service.domain.SysAdminUserService;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.FastJsonUtils;
+import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

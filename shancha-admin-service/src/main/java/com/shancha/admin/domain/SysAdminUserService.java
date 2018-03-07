@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageInfo;
 
-import cloud.simple.service.base.BaseServiceImpl;
-import cloud.simple.service.contants.Constant;
-import cloud.simple.service.dao.SysAdminUserDao;
-import cloud.simple.service.model.SysAdminUser;
-import cloud.simple.service.util.EncryptUtil;
-import cloud.simple.service.util.FastJsonUtils;
+import com.shancha.admin.base.BaseServiceImpl;
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.dao.SysAdminUserDao;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.util.EncryptUtil;
+import com.shancha.admin.util.FastJsonUtils;
 import tk.mybatis.mapper.common.Mapper;
 @Service
 public class SysAdminUserService extends BaseServiceImpl<SysAdminUser>{

@@ -3,7 +3,7 @@ package com.shancha.admin.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import cloud.simple.service.dto.TreeNode;
+import com.shancha.admin.dto.TreeNode;
 
 public class TreeBuilder {
   

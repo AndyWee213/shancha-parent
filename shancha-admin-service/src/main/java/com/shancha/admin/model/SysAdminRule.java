@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import cloud.simple.service.base.BaseEntity;
+import com.shancha.admin.base.BaseEntity;
 
 @Table(name = "`sys_admin_rule`")
 public class SysAdminRule  extends BaseEntity{

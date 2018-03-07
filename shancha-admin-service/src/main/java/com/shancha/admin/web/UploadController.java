@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import cloud.simple.service.util.FastJsonUtils;
-import cloud.simple.service.util.UploadUtils;
+import com.shancha.admin.util.FastJsonUtils;
+import com.shancha.admin.util.UploadUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

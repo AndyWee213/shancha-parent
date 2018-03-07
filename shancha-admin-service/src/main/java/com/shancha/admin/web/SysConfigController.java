@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloud.simple.service.domain.SysSystemConfigService;
-import cloud.simple.service.model.SysSystemConfig;
-import cloud.simple.service.util.FastJsonUtils;
+import com.shancha.admin.domain.SysSystemConfigService;
+import com.shancha.admin.model.SysSystemConfig;
+import com.shancha.admin.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

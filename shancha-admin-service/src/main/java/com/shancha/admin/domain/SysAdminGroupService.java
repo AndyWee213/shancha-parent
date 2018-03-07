@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-import cloud.simple.service.base.BaseServiceImpl;
-import cloud.simple.service.dao.SysAdminGroupDao;
-import cloud.simple.service.model.SysAdminGroup;
-import cloud.simple.service.util.BeanToMapUtil;
-import cloud.simple.service.util.Category;
+import com.shancha.admin.base.BaseServiceImpl;
+import com.shancha.admin.dao.SysAdminGroupDao;
+import com.shancha.admin.model.SysAdminGroup;
+import com.shancha.admin.util.BeanToMapUtil;
+import com.shancha.admin.util.Category;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
 @Service

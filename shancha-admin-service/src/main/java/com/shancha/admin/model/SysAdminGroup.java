@@ -3,7 +3,7 @@ package com.shancha.admin.model;
 import javax.persistence.Column;
 import javax.persistence.Table;
 
-import cloud.simple.service.base.BaseEntity;
+import com.shancha.admin.base.BaseEntity;
 
 @Table(name = "`sys_admin_group`")
 public class SysAdminGroup  extends BaseEntity {

@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
 
-import cloud.simple.service.contants.Constant;
+import com.shancha.admin.contants.Constant;
 /**
  * 分类管理
  */

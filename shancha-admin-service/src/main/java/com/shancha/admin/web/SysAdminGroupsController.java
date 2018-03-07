@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import cloud.simple.service.domain.SysAdminGroupService;
-import cloud.simple.service.model.SysAdminGroup;
-import cloud.simple.service.util.FastJsonUtils;
+import com.shancha.admin.domain.SysAdminGroupService;
+import com.shancha.admin.model.SysAdminGroup;
+import com.shancha.admin.util.FastJsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

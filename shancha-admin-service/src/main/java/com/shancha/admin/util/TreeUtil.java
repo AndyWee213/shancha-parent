@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
 
-import cloud.simple.service.dto.TreeNode;
-import cloud.simple.service.model.SysAdminMenu;
-import cloud.simple.service.model.SysAdminRule;
+import com.shancha.admin.dto.TreeNode;
+import com.shancha.admin.model.SysAdminMenu;
+import com.shancha.admin.model.SysAdminRule;
 
 /**
  * 树工具类
