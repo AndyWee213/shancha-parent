@@ -34,6 +34,8 @@
         <kaptcha.version>2.3.2</kaptcha.version>
         <springfox.swagger2.version>2.7.0</springfox.swagger2.version>
         <fastjson.version>1.2.40</fastjson.version>
+        <mysql.version>5.1.45</mysql.version>
+        <docx4j.version>3.3.6</docx4j.version>
     </properties>
 
     <dependencyManagement>
@@ -62,6 +64,13 @@
                 <version>${mapper.spring.boot.starter.version}</version>
             </dependency>
             <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- mybatis -->
+            <!-- druid -->
+            <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
@@ -71,12 +80,12 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+            <!-- druid -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.spring.boot.starter.version}</version>
             </dependency>
-            <!-- mybatis -->
 
             <!-- commons -->
             <dependency>
@@ -116,6 +125,12 @@
                 <version>${springfox.swagger2.version}</version>
             </dependency>
             <!-- swagger -->
+
+            <dependency>
+                <groupId>org.docx4j</groupId>
+                <artifactId>docx4j</artifactId>
+                <version>${docx4j.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.alibaba</groupId>

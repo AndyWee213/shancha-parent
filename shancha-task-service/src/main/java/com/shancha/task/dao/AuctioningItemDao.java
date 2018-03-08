@@ -9,4 +9,5 @@ import tk.mybatis.mapper.common.Mapper;
  * @author weiq
  */
 public interface AuctioningItemDao extends Mapper<AuctioningItem> {
+
 }

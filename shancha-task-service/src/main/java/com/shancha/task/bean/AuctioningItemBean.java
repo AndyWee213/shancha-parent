@@ -1,6 +1,4 @@
-package com.shancha.task.model;
-
-import lombok.Data;
+package com.shancha.task.bean;
 
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -11,13 +9,13 @@ import java.io.Serializable;
  *
  * @author weiq
  */
-@Table(name = "auctioning_item_detail")
-public class AuctioningItem implements Serializable {
+@XmlRootElement
+public class AuctioningItemBean implements Serializable {
     private String id;
     private String url;
     private String title;
-    private Long sellStart;
-    private Long sellEnd;
+    private String sellStart;
+    private String sellEnd;
     private String type;
     private String state;
     private String province;
@@ -33,8 +31,8 @@ public class AuctioningItem implements Serializable {
     private String reviewOrg;
     private String contact;
     private String contactPhone;
-    private Long createTime;
-    private Long modifyTime;
+    private String createTime;
+    private String modifyTime;
 
     public String getId() {
         return id;
@@ -60,19 +58,19 @@ public class AuctioningItem implements Serializable {
         this.title = title;
     }
 
-    public Long getSellStart() {
+    public String getSellStart() {
         return sellStart;
     }
 
-    public void setSellStart(Long sellStart) {
+    public void setSellStart(String sellStart) {
         this.sellStart = sellStart;
     }
 
-    public Long getSellEnd() {
+    public String getSellEnd() {
         return sellEnd;
     }
 
-    public void setSellEnd(Long sellEnd) {
+    public void setSellEnd(String sellEnd) {
         this.sellEnd = sellEnd;
     }
 
@@ -196,19 +194,19 @@ public class AuctioningItem implements Serializable {
         this.contactPhone = contactPhone;
     }
 
-    public Long getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public Long getModifyTime() {
+    public String getModifyTime() {
         return modifyTime;
     }
 
-    public void setModifyTime(Long modifyTime) {
+    public void setModifyTime(String modifyTime) {
         this.modifyTime = modifyTime;
     }
 }
