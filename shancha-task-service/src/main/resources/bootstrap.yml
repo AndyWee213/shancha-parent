@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      profile: dev
+      name: application
+      uri: http://${cofig.host:localhost}:${config.port:1111}
+  application:
+    name: shancha-task-service
+  profiles:
+    active: dev
+    include: swagger

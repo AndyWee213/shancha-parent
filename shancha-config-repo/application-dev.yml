@@ -5,7 +5,7 @@
 # datasource
 spring:
   application:
-    name: shancha-task-service
+    name: shancha-task-runner
   datasource:
     druid:
       one:

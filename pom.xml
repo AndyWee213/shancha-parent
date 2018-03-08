@@ -24,6 +24,16 @@
         <java.version>1.8</java.version>
         <lombok.version>1.16.18</lombok.version>
         <spring.cloud.version>Edgware.SR2</spring.cloud.version>
+        <mybatis.spring.boot.starter.version>1.3.1</mybatis.spring.boot.starter.version>
+        <mapper.spring.boot.starter.version>1.1.5</mapper.spring.boot.starter.version>
+        <pagehelper.spring.boot.starter.version>1.2.3</pagehelper.spring.boot.starter.version>
+        <druid.version>1.1.5</druid.version>
+        <commons.net.version>3.6</commons.net.version>
+        <commons.lang3.version>3.6</commons.lang3.version>
+        <commons.file.upload.version>1.3.3</commons.file.upload.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <springfox.swagger2.version>2.7.0</springfox.swagger2.version>
+        <fastjson.version>1.2.40</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -39,6 +49,78 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper.spring.boot.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.spring.boot.starter.version}</version>
+            </dependency>
+            <!-- mybatis -->
+
+            <!-- commons -->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons.net.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.file.upload.version}</version>
+            </dependency>
+            <!-- commons -->
+
+            <!-- kaptcha -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+            <!-- kaptcha -->
+
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.swagger2.version}</version>
+            </dependency>
+            <!-- swagger -->
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
