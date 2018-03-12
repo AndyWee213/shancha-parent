@@ -33,6 +33,7 @@ public class AuctioningItem implements Serializable {
     private String reviewOrg;
     private String contact;
     private String contactPhone;
+    private String communityId;
     private Long createTime;
     private Long modifyTime;
 
@@ -210,5 +211,13 @@ public class AuctioningItem implements Serializable {
 
     public void setModifyTime(Long modifyTime) {
         this.modifyTime = modifyTime;
+    }
+
+    public String getCommunityId() {
+        return communityId;
+    }
+
+    public void setCommunityId(String communityId) {
+        this.communityId = communityId;
     }
 }
