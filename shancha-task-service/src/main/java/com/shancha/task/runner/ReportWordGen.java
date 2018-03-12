@@ -5,7 +5,6 @@ import com.shancha.task.model.AuctioningItem;
 import com.shancha.task.model.Community;
 import com.shancha.task.service.AuctioningItemService;
 import com.shancha.task.service.CommunityService;
-import org.apache.http.auth.AUTH;
 import org.docx4j.Docx4J;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.slf4j.Logger;
@@ -25,7 +24,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -46,7 +44,7 @@ public class ReportWordGen implements CommandLineRunner {
         logger.info("Report generation task start.");
         List<AuctioningItem> auctioningItems = auctioningItemService.getAllAuctioningItemCrawledToday();
         List<String> ids = new ArrayList<>();
-        auctioningItems.forEach(p -> ids.add(p.getId()));
+        auctioningItems.forEach(p -> ids.add(p.getCommunityId()));
         List<Community> communities = communityService.getCommunitiesByCommunityIds(ids);
         Map<String, Community> communityMap = communities.stream().collect(Collectors.toMap(Community::getId, Function.identity()));
 
@@ -60,6 +58,22 @@ public class ReportWordGen implements CommandLineRunner {
             bean.setSellEnd(df.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(item.getSellEnd() / 1000), ZoneId.of("Asia/Shanghai"))));
             bean.setUrl(item.getUrl());
             bean.setValuation(item.getValuation());
+
+            //添加小区信息
+            Community community = communityMap.get(item.getId());
+            bean.setBuildingType(community.getBuildingType());
+            bean.setBuildingYear(community.getBuildingYear());
+            bean.setCountInfo(community.getBuildingCount()+"/"+community.getFamilyCount());
+            bean.setDevelopeCompany(community.getDeveloperCompany());
+            bean.setElevator(community.getElevator());
+            bean.setGreeningRatio(community.getGreeningRate());
+            bean.setPlate(community.getPlate());
+            bean.setPlotRatio(community.getPlotRation());
+            bean.setPorking(community.getPorking());
+            bean.setPosition(community.getPosition());
+            bean.setPropertyCompany(community.getPropertyCompany());
+            bean.setPropertyPrice(community.getPropertyPrice());
+
             beans.add(bean);
         }
 
@@ -70,6 +84,7 @@ public class ReportWordGen implements CommandLineRunner {
             StringWriter writer = new StringWriter();
             // generate xml string
             marshaller.marshal(bean, writer);
+            logger.info(writer.toString());
 
             Resource resource = new ClassPathResource("report/report.docx");
             WordprocessingMLPackage wordMLPackage = Docx4J.load(resource.getInputStream());
