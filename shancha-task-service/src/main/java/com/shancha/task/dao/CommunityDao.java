@@ -1,4 +1,4 @@
-package com.shancha.task.conf;
+package com.shancha.task.dao;
 
 import com.shancha.task.model.Community;
 import tk.mybatis.mapper.common.Mapper;

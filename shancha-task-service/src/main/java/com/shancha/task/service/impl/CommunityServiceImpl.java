@@ -1,12 +1,14 @@
 package com.shancha.task.service.impl;
 
-import com.shancha.task.conf.CommunityDao;
+import com.shancha.task.dao.CommunityDao;
 import com.shancha.task.model.AuctioningItem;
 import com.shancha.task.model.Community;
 import com.shancha.task.service.CommunityService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,13 +19,14 @@ import java.util.List;
 @Service
 public class CommunityServiceImpl implements CommunityService {
 
+    @Autowired
     private CommunityDao dao;
 
     @Override
-    public List<Community> getCommunitiesByCommunityIds(List<String> communityIds) {
+    public List<Community> getCommunitiesByCommunityIds(List<String> ids) {
         Example example = new Example(AuctioningItem.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andIn("id", communityIds);
-        return dao.selectByExample(example);
+        criteria.andIn("id", ids);
+        return ids.isEmpty() ? Collections.EMPTY_LIST : dao.selectByExample(example);
     }
 }

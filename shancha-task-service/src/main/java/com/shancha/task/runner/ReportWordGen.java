@@ -5,6 +5,7 @@ import com.shancha.task.model.AuctioningItem;
 import com.shancha.task.model.Community;
 import com.shancha.task.service.AuctioningItemService;
 import com.shancha.task.service.CommunityService;
+import org.apache.commons.lang3.StringUtils;
 import org.docx4j.Docx4J;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.slf4j.Logger;
@@ -54,26 +55,37 @@ public class ReportWordGen implements CommandLineRunner {
             ReportDataBean bean = new ReportDataBean();
             bean.setTitle(item.getTitle());
             bean.setSellOrg(item.getSellOrg());
-            bean.setSellStart(df.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(item.getSellStart() / 1000), ZoneId.of("Asia/Shanghai"))));
-            bean.setSellEnd(df.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(item.getSellEnd() / 1000), ZoneId.of("Asia/Shanghai"))));
+            bean.setSellStart(df.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(item.getSellStart()), ZoneId.of("Asia/Shanghai"))));
+            bean.setSellEnd(df.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(item.getSellEnd()), ZoneId.of("Asia/Shanghai"))));
             bean.setUrl(item.getUrl());
             bean.setValuation(item.getValuation());
 
             //添加小区信息
-            Community community = communityMap.get(item.getId());
-            bean.setBuildingType(community.getBuildingType());
-            bean.setBuildingYear(community.getBuildingYear());
-            bean.setCountInfo(community.getBuildingCount()+"/"+community.getFamilyCount());
-            bean.setDevelopeCompany(community.getDeveloperCompany());
-            bean.setElevator(community.getElevator());
-            bean.setGreeningRatio(community.getGreeningRate());
-            bean.setPlate(community.getPlate());
-            bean.setPlotRatio(community.getPlotRation());
-            bean.setPorking(community.getPorking());
-            bean.setPosition(community.getPosition());
-            bean.setPropertyCompany(community.getPropertyCompany());
-            bean.setPropertyPrice(community.getPropertyPrice());
-
+            Community community = communityMap.get(item.getCommunityId());
+            String buildingCount;
+            String familyCount;
+            if (community != null) {
+                bean.setBuildingType(community.getBuildingType() == null ? "暂无数据" : community.getBuildingType());
+                bean.setBuildingYear(community.getBuildingYear() == null ? "暂无数据" : community.getBuildingYear());
+                buildingCount = community.getBuildingCount() == null ? "" : community.getBuildingCount();
+                familyCount = community.getFamilyCount() == null ? "" : community.getFamilyCount();
+                if (StringUtils.isEmpty(buildingCount) && StringUtils.isEmpty(familyCount)) {
+                    bean.setCountInfo("暂无数据");
+                }else if (StringUtils.isEmpty(buildingCount) || StringUtils.isEmpty(familyCount)) {
+                    bean.setCountInfo(StringUtils.isEmpty(buildingCount) ? familyCount : buildingCount);
+                }else {
+                    bean.setCountInfo(buildingCount.concat("/").concat(familyCount));
+                }
+                bean.setDevelopeCompany(community.getDeveloperCompany() == null ? "暂无数据" : community.getDeveloperCompany());
+                bean.setElevator(community.getElevator() == null ? "暂无数据" : community.getElevator());
+                bean.setGreeningRatio(community.getGreeningRate() == null ? "暂无数据" : community.getGreeningRate());
+                bean.setPlate(community.getPlate() == null ? "暂无数据" : community.getPlate());
+                bean.setPlotRatio(community.getPlotRation() == null ? "暂无数据" : community.getPlotRation());
+                bean.setPorking(community.getPorking() == null ? "暂无数据" : community.getPorking());
+                bean.setPosition(community.getPosition() == null ? "暂无数据" : community.getPosition());
+                bean.setPropertyCompany(community.getPropertyCompany() == null ? "暂无数据" : community.getPropertyCompany());
+                bean.setPropertyPrice(community.getPropertyPrice() == null ? "暂无数据" : community.getPropertyPrice());
+            }
             beans.add(bean);
         }
 
