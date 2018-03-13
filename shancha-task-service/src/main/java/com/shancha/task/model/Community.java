@@ -10,6 +10,7 @@ import java.io.Serializable;
  */
 @Table(name = "community")
 public class Community implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String id;
     private String url;
     private String title;

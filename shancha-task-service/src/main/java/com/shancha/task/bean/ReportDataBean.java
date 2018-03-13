@@ -1,8 +1,8 @@
 package com.shancha.task.bean;
 
-import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by weiq on 2018/03/08.
@@ -83,6 +83,14 @@ public class ReportDataBean implements Serializable {
      * 绿化率
      */
     private String greeningRatio;
+    private List<CommunityExtBean> kindergartens;
+    private List<CommunityExtBean> primarySchools;
+    private List<CommunityExtBean> secondarySchools;
+    private List<CommunityExtBean> hospitals;
+    private List<CommunityExtBean> busStations;
+    private List<CommunityExtBean> subwayStations;
+    private List<CommunityExtBean> shoppingMalls;
+    private List<CommunityExtBean> parks;
 
     public String getUrl() {
         return url;
@@ -226,5 +234,69 @@ public class ReportDataBean implements Serializable {
 
     public void setGreeningRatio(String greeningRatio) {
         this.greeningRatio = greeningRatio;
+    }
+
+    public List<CommunityExtBean> getKindergartens() {
+        return kindergartens;
+    }
+
+    public void setKindergartens(List<CommunityExtBean> kindergartens) {
+        this.kindergartens = kindergartens;
+    }
+
+    public List<CommunityExtBean> getPrimarySchools() {
+        return primarySchools;
+    }
+
+    public void setPrimarySchools(List<CommunityExtBean> primarySchools) {
+        this.primarySchools = primarySchools;
+    }
+
+    public List<CommunityExtBean> getSecondarySchools() {
+        return secondarySchools;
+    }
+
+    public void setSecondarySchools(List<CommunityExtBean> secondarySchools) {
+        this.secondarySchools = secondarySchools;
+    }
+
+    public List<CommunityExtBean> getHospitals() {
+        return hospitals;
+    }
+
+    public void setHospitals(List<CommunityExtBean> hospitals) {
+        this.hospitals = hospitals;
+    }
+
+    public List<CommunityExtBean> getBusStations() {
+        return busStations;
+    }
+
+    public void setBusStations(List<CommunityExtBean> busStations) {
+        this.busStations = busStations;
+    }
+
+    public List<CommunityExtBean> getSubwayStations() {
+        return subwayStations;
+    }
+
+    public void setSubwayStations(List<CommunityExtBean> subwayStations) {
+        this.subwayStations = subwayStations;
+    }
+
+    public List<CommunityExtBean> getShoppingMalls() {
+        return shoppingMalls;
+    }
+
+    public void setShoppingMalls(List<CommunityExtBean> shoppingMalls) {
+        this.shoppingMalls = shoppingMalls;
+    }
+
+    public List<CommunityExtBean> getParks() {
+        return parks;
+    }
+
+    public void setParks(List<CommunityExtBean> parks) {
+        this.parks = parks;
     }
 }

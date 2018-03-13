@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class CommunityServiceImpl implements CommunityService {
     private CommunityDao dao;
 
     @Override
-    public List<Community> getCommunitiesByCommunityIds(List<String> ids) {
+    public List<Community> getCommunitiesByCommunityIds(Collection<String> ids) {
         Example example = new Example(AuctioningItem.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andIn("id", ids);

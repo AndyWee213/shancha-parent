@@ -2,6 +2,7 @@ package com.shancha.task.service;
 
 import com.shancha.task.model.Community;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -11,5 +12,5 @@ import java.util.List;
  */
 public interface CommunityService {
 
-    List<Community> getCommunitiesByCommunityIds(List<String> communityIds);
+    List<Community> getCommunitiesByCommunityIds(Collection<String> communityIds);
 }

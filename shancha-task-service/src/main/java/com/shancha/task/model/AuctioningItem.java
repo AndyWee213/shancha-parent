@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 @Table(name = "auctioning_item_detail")
 public class AuctioningItem implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String id;
     private String url;
     private String title;
