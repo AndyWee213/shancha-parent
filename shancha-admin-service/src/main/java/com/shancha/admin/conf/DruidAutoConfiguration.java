@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -18,8 +19,9 @@ import com.alibaba.druid.pool.DruidDataSource;
 @Configuration
 @EnableConfigurationProperties(DruidProperties.class)
 @ConditionalOnClass(DruidDataSource.class)
-@ConditionalOnProperty(prefix = "druid", name = "url")
+@ConditionalOnProperty(prefix = "spring.datasource.druid.two", name = "url")
 @AutoConfigureBefore(DataSourceAutoConfiguration.class)
+@MapperScan(basePackages = "com.shancha.admin.dao")
 public class DruidAutoConfiguration {
 
     @Autowired
