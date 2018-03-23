@@ -26,7 +26,7 @@ public class Swagger2Config {
     	return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("cloud.simple.runner"))
+				.apis(RequestHandlerSelectors.basePackage("com.shancha.admin"))
 				.paths(PathSelectors.any())
 				.build()
 				.pathMapping("/")
@@ -40,9 +40,9 @@ public class Swagger2Config {
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				//页面标题
-				.title("SpringCloud + vue RESTful API")
+				.title("Shancha RESTful API")
 				//创建人
-				.contact("leo.aqing")
+				.contact("Andy Wee")
 				//版本号
 				.version("1.0")
 				//描述
