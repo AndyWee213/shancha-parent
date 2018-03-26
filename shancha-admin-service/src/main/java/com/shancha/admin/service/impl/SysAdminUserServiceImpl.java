@@ -1,5 +1,6 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
+import com.shancha.admin.service.SysAdminUserService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +10,15 @@ import com.github.pagehelper.PageInfo;
 
 import com.shancha.admin.base.BaseServiceImpl;
 import com.shancha.admin.contants.Constant;
-import com.shancha.admin.dao.SysAdminUserDao;
+import com.shancha.admin.dao.SysAdminUserMapper;
 import com.shancha.admin.model.SysAdminUser;
 import com.shancha.admin.util.EncryptUtil;
 import com.shancha.admin.util.FastJsonUtils;
 import tk.mybatis.mapper.common.Mapper;
 @Service
-public class SysAdminUserService extends BaseServiceImpl<SysAdminUser>{
+public class SysAdminUserServiceImpl extends BaseServiceImpl<SysAdminUser> implements SysAdminUserService{
 	@Autowired
-	private SysAdminUserDao sysAdminUserDao;
+	private SysAdminUserMapper sysAdminUserDao;
 	
 	@Override
 	public Mapper<SysAdminUser> getMapper() {

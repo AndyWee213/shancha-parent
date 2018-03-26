@@ -1,7 +1,8 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
 import java.util.List;
 
+import com.shancha.admin.service.SysAdminPostService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
 @Service
-public class SysAdminPostService extends BaseServiceImpl<SysAdminPost>{
+public class SysAdminPostServiceImpl extends BaseServiceImpl<SysAdminPost> implements SysAdminPostService{
 	
 	@Autowired
 	private Mapper<SysAdminPost> sysAdminPostDao;

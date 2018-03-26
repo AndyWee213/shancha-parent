@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.shancha.admin.service.SysAdminGroupService;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shancha.admin.domain.SysAdminGroupService;
 import com.shancha.admin.model.SysAdminGroup;
 import com.shancha.admin.util.FastJsonUtils;
 import io.swagger.annotations.Api;

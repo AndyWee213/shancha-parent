@@ -1,10 +1,22 @@
 package com.shancha.admin.web;
 
-import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.shancha.admin.contants.Constant;
+import com.shancha.admin.model.SysAdminRule;
+import com.shancha.admin.model.SysAdminUser;
+import com.shancha.admin.service.SysAdminMenuService;
+import com.shancha.admin.service.SysAdminRuleService;
+import com.shancha.admin.service.SysAdminUserService;
+import com.shancha.admin.util.EncryptUtil;
+import com.shancha.admin.util.FastJsonUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -12,31 +24,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.google.code.kaptcha.impl.DefaultKaptcha;
-
-import com.shancha.admin.contants.Constant;
-import com.shancha.admin.domain.SysAdminMenuService;
-import com.shancha.admin.domain.SysAdminRuleService;
-import com.shancha.admin.domain.SysAdminUserService;
-import com.shancha.admin.model.SysAdminRule;
-import com.shancha.admin.model.SysAdminUser;
-import com.shancha.admin.util.EncryptUtil;
-import com.shancha.admin.util.FastJsonUtils;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * 登录控制层

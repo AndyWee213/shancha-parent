@@ -1,9 +1,10 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.shancha.admin.service.SysAdminMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,20 +12,20 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import com.shancha.admin.base.BaseServiceImpl;
-import com.shancha.admin.dao.SysAdminGroupDao;
-import com.shancha.admin.dao.SysAdminMenuDao;
+import com.shancha.admin.dao.SysAdminGroupMapper;
+import com.shancha.admin.dao.SysAdminMenuMapper;
 import com.shancha.admin.model.SysAdminGroup;
 import com.shancha.admin.model.SysAdminMenu;
 import com.shancha.admin.util.BeanToMapUtil;
 import com.shancha.admin.util.Category;
 import tk.mybatis.mapper.common.Mapper;
 @Service
-public class SysAdminMenuService extends BaseServiceImpl<SysAdminMenu>{
-	
+public class SysAdminMenuServiceImpl extends BaseServiceImpl<SysAdminMenu> implements SysAdminMenuService {
+
 	@Autowired
-	private SysAdminMenuDao sysAdminMenuDao;
+	private SysAdminMenuMapper sysAdminMenuDao;
 	@Autowired
-	private SysAdminGroupDao sysAdminGroupDao;
+	private SysAdminGroupMapper sysAdminGroupDao;
 	
 	
 	@Override

@@ -1,8 +1,9 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
 import java.util.List;
 import java.util.Map;
 
+import com.shancha.admin.service.SysAdminGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,16 +11,16 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import com.shancha.admin.base.BaseServiceImpl;
-import com.shancha.admin.dao.SysAdminGroupDao;
+import com.shancha.admin.dao.SysAdminGroupMapper;
 import com.shancha.admin.model.SysAdminGroup;
 import com.shancha.admin.util.BeanToMapUtil;
 import com.shancha.admin.util.Category;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
 @Service
-public class SysAdminGroupService extends BaseServiceImpl<SysAdminGroup>{
+public class SysAdminGroupServiceImpl extends BaseServiceImpl<SysAdminGroup> implements SysAdminGroupService {
 	@Autowired
-	private SysAdminGroupDao sysAdminGroupDao;
+	private SysAdminGroupMapper sysAdminGroupDao;
 	
 	@Override
 	public Mapper<SysAdminGroup> getMapper() {
@@ -29,6 +30,7 @@ public class SysAdminGroupService extends BaseServiceImpl<SysAdminGroup>{
 	 * 列表
 	 * @return
 	 */
+	@Override
 	public List<Map<String, Object>> getDataList() {
 		Example example = new Example(SysAdminGroup.class);
 		List<SysAdminGroup> rootSysAdminGroups = sysAdminGroupDao.selectByExample(example);

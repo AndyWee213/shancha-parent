@@ -1,8 +1,9 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
 import java.util.List;
 import java.util.Map;
 
+import com.shancha.admin.service.SysAdminStructureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,17 +11,17 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import com.shancha.admin.base.BaseServiceImpl;
-import com.shancha.admin.dao.SysAdminStructureDao;
+import com.shancha.admin.dao.SysAdminStructureMapper;
 import com.shancha.admin.model.SysAdminStructure;
 import com.shancha.admin.util.BeanToMapUtil;
 import com.shancha.admin.util.Category;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.entity.Example;
 @Service
-public class SysAdminStructureService extends BaseServiceImpl<SysAdminStructure>{
+public class SysAdminStructureServiceImpl extends BaseServiceImpl<SysAdminStructure> implements SysAdminStructureService{
 
 	@Autowired
-	private SysAdminStructureDao sysAdminStructureDao;
+	private SysAdminStructureMapper sysAdminStructureDao;
 	
 	@Override
 	public Mapper<SysAdminStructure> getMapper() {

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.shancha.admin.contants.Constant;
-import com.shancha.admin.domain.SysAdminUserService;
+import com.shancha.admin.service.impl.SysAdminUserServiceImpl;
 import com.shancha.admin.model.SysAdminUser;
 import com.shancha.admin.util.EncryptUtil;
 import com.shancha.admin.util.FastJsonUtils;
@@ -20,7 +20,7 @@ import com.shancha.admin.util.FastJsonUtils;
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
 	@Autowired
-	private SysAdminUserService sysAdminUserService;
+	private SysAdminUserServiceImpl sysAdminUserService;
 	
 	
 	

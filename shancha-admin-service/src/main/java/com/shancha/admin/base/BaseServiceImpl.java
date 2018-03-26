@@ -17,8 +17,6 @@ import tk.mybatis.mapper.entity.Example.Criteria;
 
 public abstract class BaseServiceImpl< T extends BaseEntity> implements BaseService<T>{
 	
-	//protected Mapper<T> mapper;
-	
 	public abstract Mapper<T> getMapper();
 	
 	@Override

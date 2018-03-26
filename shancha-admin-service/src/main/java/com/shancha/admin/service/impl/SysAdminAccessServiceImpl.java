@@ -1,7 +1,8 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
 import com.shancha.admin.base.BaseServiceImpl;
-import com.shancha.admin.dao.SysAdminAccessDao;
+import com.shancha.admin.dao.SysAdminAccessMapper;
+import com.shancha.admin.service.SysAdminAccessService;
 import com.shancha.admin.model.SysAdminAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,10 +10,10 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.common.Mapper;
 
 @Service
-public class SysAdminAccessService extends BaseServiceImpl<SysAdminAccess> {
+public class SysAdminAccessServiceImpl extends BaseServiceImpl<SysAdminAccess> implements SysAdminAccessService {
 	
 	@Autowired
-	private SysAdminAccessDao sysAdminAccessDao;
+	private SysAdminAccessMapper sysAdminAccessDao;
 	
 	@Override
 	public Mapper<SysAdminAccess> getMapper() {

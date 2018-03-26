@@ -1,22 +1,20 @@
 package com.shancha.admin.web;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.shancha.admin.model.SysSystemConfig;
+import com.shancha.admin.service.SysSystemConfigService;
+import com.shancha.admin.util.FastJsonUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shancha.admin.domain.SysSystemConfigService;
-import com.shancha.admin.model.SysSystemConfig;
-import com.shancha.admin.util.FastJsonUtils;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 系统配置 控制层

@@ -3,10 +3,10 @@ package com.shancha.admin.dao;
 import java.util.List;
 
 import com.shancha.admin.model.SysAdminGroup;
-import com.shancha.admin.util.MyMapper;
+import com.shancha.admin.util.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
-public interface SysAdminGroupDao extends MyMapper<SysAdminGroup> {
+public interface SysAdminGroupMapper extends BaseMapper<SysAdminGroup> {
 	/**
 	 * 查询分组信息
 	 * @param userId 用户ID

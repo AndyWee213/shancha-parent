@@ -1,9 +1,10 @@
-package com.shancha.admin.domain;
+package com.shancha.admin.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.shancha.admin.service.SysAdminRuleService;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,20 +13,20 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import com.shancha.admin.base.BaseServiceImpl;
-import com.shancha.admin.dao.SysAdminGroupDao;
-import com.shancha.admin.dao.SysAdminRuleDao;
+import com.shancha.admin.dao.SysAdminGroupMapper;
+import com.shancha.admin.dao.SysAdminRuleMapper;
 import com.shancha.admin.model.SysAdminGroup;
 import com.shancha.admin.model.SysAdminRule;
 import com.shancha.admin.util.BeanToMapUtil;
 import com.shancha.admin.util.Category;
 import tk.mybatis.mapper.common.Mapper;
 @Service
-public class SysAdminRuleService extends BaseServiceImpl<SysAdminRule>{
+public class SysAdminRuleServiceImpl extends BaseServiceImpl<SysAdminRule> implements SysAdminRuleService {
 	
 	@Autowired
-	private SysAdminRuleDao sysAdminRuleDao;
+	private SysAdminRuleMapper sysAdminRuleDao;
 	@Autowired
-	private SysAdminGroupDao sysAdminGroupDao;
+	private SysAdminGroupMapper sysAdminGroupDao;
 	
 	@Override
 	public Mapper<SysAdminRule> getMapper() {
