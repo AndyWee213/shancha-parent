@@ -7,7 +7,7 @@ spring:
       name: application
       uri: http://${cofig.host:localhost}:${config.port:1111}
   application:
-    name: shancha-admin-runner
+    name: shancha-admin-service
   profiles:
     active: dev
     include: swagger
