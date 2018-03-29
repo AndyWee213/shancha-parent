@@ -1,12 +1,9 @@
-package com.shancha.admin.conf;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
+package com.shancha.commons.config;
 
 /**
  * 只提供了常用的属性，如果有需要，自己添加
  *
  */
-@ConfigurationProperties(prefix = "spring.datasource.druid.two")
 public class DruidProperties {
     private String url;
     private String username;
