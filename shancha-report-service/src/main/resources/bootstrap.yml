@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8083
 spring:
   cloud:
     config:
@@ -7,15 +7,10 @@ spring:
       name: application
       uri: http://${cofig.host:localhost}:${properties.port:1111}
   application:
-    name: shancha-admin-service
+    name: shancha-report-service
   profiles:
     active: dev
     include: swagger
-  devtools:
-    restart:
-      enabled: false
-    livereload:
-      enabled: false
   zipkin:
     base-url: http://localhost:8082
   sleuth:

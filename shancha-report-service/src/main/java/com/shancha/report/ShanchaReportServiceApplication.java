@@ -1,17 +1,14 @@
-package com.shancha.admin;
+package com.shancha.report;
 
-//import com.spring4all.swagger.EnableSwagger2Doc;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-//@EnableSwagger2Doc
 @SpringBootApplication
 @EnableEurekaClient
-public class ShanchaAdminServiceApplication {
+public class ShanchaReportServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ShanchaAdminServiceApplication.class, args);
+		SpringApplication.run(ShanchaReportServiceApplication.class, args);
 	}
 }

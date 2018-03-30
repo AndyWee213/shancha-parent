@@ -1,4 +1,4 @@
-package com.shancha.neighborhoods.service;
+package com.shancha.report;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ShanchaNeighborhoodsServiceApplicationTests {
+public class ShanchaReportServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {

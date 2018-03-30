@@ -5,7 +5,7 @@ spring:
     config:
       profile: dev
       name: application
-      uri: http://${cofig.host:localhost}:${config.port:1111}
+      uri: http://${cofig.host:localhost}:${properties.port:1111}
   application:
     name: shancha-task-service
   profiles:
