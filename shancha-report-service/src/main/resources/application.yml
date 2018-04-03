@@ -1,0 +1,23 @@
+logging:
+  level:
+    tk:
+      mybatis: TRACE
+    com:
+      framework: TRACE
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+mybatis:
+  type-aliases-package: com.shancha.report.model
+  mapper-locations: classpath*:/mappers/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers: com.shancha.report.util.BaseMapper
+  not-empty: true
+  identity: MYSQL

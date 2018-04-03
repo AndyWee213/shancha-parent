@@ -1,6 +1,8 @@
 package com.shancha.report.model;
 
+import com.shancha.report.base.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Table;
 
@@ -9,10 +11,11 @@ import javax.persistence.Table;
  *
  * @author weiq
  */
-@Table(name = "auctioning_item")
+@EqualsAndHashCode(callSuper = true)
+@Table(name = "auctioning_item_detail")
 @Data
-public class AuctioningItem {
-    private String id;
+public class AuctioningItem extends BaseEntity {
+    private static final long serialVersionUID = 1L;
     private String url;
     private String title;
     private Long sellStart;
@@ -21,7 +24,19 @@ public class AuctioningItem {
     private String state;
     private String province;
     private String city;
-    private Long create_time;
-    private Long modify_time;
+    private Long createTime;
+    private Long modifyTime;
     private String detailed;
+    private String sellType;
+    private String startPrice;
+    private String stepPrice;
+    private String securityDeposit;
+    private String valuation;
+    private String prePay;
+    private String preferredCustomer;
+    private String sellOrg;
+    private String reviewOrg;
+    private String contact;
+    private String contactPhone;
+    private String communityId;
 }
