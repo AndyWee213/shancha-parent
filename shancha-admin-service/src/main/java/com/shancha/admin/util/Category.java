@@ -66,13 +66,13 @@ public class Category {
 	
 	/**
 	 * 递归格式化分类前的字符
-	 * @param pid 分类id
+	 * @param cid 分类id
 	 * @param space 空白
 	 * @param level 级别
-	 * @param p_name 父名称
+	 * @param pName 父名称
 	 * @return
 	 */
-	private void _searchList( Object cid, String space, int level, Object pname){
+	private void searchList(Object cid, String space, int level, Object pName){
 		List<Map<String, Object>> childs = this.getChild(cid);
 		//如果没有下级分类，结束递归
 		if(CollectionUtils.isEmpty(childs)) {
@@ -80,24 +80,23 @@ public class Category {
 		}
 		int n = childs.size();
 		int m = 1;
-		for (int i = 0; i < n; i++) {
-			Map<String, Object> child = childs.get(i);
-			String pre = "";
-			String pad = "";
-			if (n == m) {
-				pre = Constant.ICON[2];
-			} else {
-				pre = Constant.ICON[1];
-				pad = StringUtils.isBlank(space) ? Constant.ICON[0] : "";
-			}
-			child.put("p_title", pname);
-			child.put("else", child.get(fields.get("name")));
-			child.put(fields.get("fullname"), (!cid.equals(0)? space + pre  : "") + child.get(fields.get("name")));
-			child.put("level", level);
-			formatList.add(child);
-			this._searchList(child.get(fields.get("cid")), space + pad + "  ", level + 1, child.get("else"));
-			m++;
-		}
+        for (Map<String, Object> child : childs) {
+            String pre = "";
+            String pad = "";
+            if (n == m) {
+                pre = Constant.ICON[2];
+            } else {
+                pre = Constant.ICON[1];
+                pad = StringUtils.isBlank(space) ? Constant.ICON[0] : "";
+            }
+            child.put("p_title", pName);
+            child.put("else", child.get(fields.get("name")));
+            child.put(fields.get("fullname"), (!cid.equals(0) ? space + pre : "") + child.get(fields.get("name")));
+            child.put("level", level);
+            formatList.add(child);
+            this.searchList(child.get(fields.get("cid")), space + pad + "  ", level + 1, child.get("else"));
+            m++;
+        }
 	}
 	
 	/**
@@ -106,7 +105,7 @@ public class Category {
 	 * @return
 	 */
 	public List<Map<String, Object>> getList(Object cid) {
-		this._searchList(cid, "", 1, "");
+		this.searchList(cid, "", 1, "");
 		return formatList;
 	}
 

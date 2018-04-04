@@ -87,7 +87,7 @@ public class LoginController extends CommonController{
 	
 	/**
 	 * 重新登录
-	 * @param rememberKey
+	 * @param map
 	 * @param request
 	 * @return
 	 */
@@ -96,12 +96,12 @@ public class LoginController extends CommonController{
 		@ApiImplicitParam(name = "rememberKey", value ="登录成功后的授权码", required = true, dataType = "String")
 	})
 	@RequestMapping(value = "/relogin", produces = {"application/json;charset=UTF-8"})
-	public String relogin(String rememberKey,HttpServletRequest request) {
-		String rememberValue = EncryptUtil.decryptBase64(rememberKey, Constant.SECRET_KEY);
-		String[] splits = rememberValue.split("|");
+	public String relogin(@RequestBody Map<String, String> map,HttpServletRequest request) {
+		String rememberValue = EncryptUtil.decryptBase64(map.get("rememberKey"), Constant.SECRET_KEY);
+		String[] splits = rememberValue.split("\\|");
 		SysAdminUser record = new SysAdminUser();
 		record.setUsername(splits[0]);
-		record.setUsername(splits[1]);
+		record.setPassword(splits[1]);
 		SysAdminUser user = sysAdminUserService.selectOne(record);
 		if(user == null) {
 			return FastJsonUtils.resultError(-400, "重新登录失败", null);
@@ -161,7 +161,6 @@ public class LoginController extends CommonController{
 	 * 修改密码
 	 * @param old_pwd
 	 * @param new_pwd
-	 * @param session
 	 */
 	@PostMapping(value = "/setInfo", produces = "application/json;charset=UTF-8")
 	@ResponseBody
