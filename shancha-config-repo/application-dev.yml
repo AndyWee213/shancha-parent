@@ -7,7 +7,7 @@ spring:
   datasource:
     druid:
       one:
-        url: jdbc:mysql://192.168.10.40:3306/shancha_taobao?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://192.168.255.10:3306/shancha_taobao?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
         driver-class-name: com.mysql.jdbc.Driver
@@ -22,7 +22,7 @@ spring:
         test-on-borrow: false
         test-on-return: false
       two:
-        url: jdbc:mysql://192.168.10.40:3306/shancha_system?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://192.168.255.10:3306/shancha_system?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
         password: 123456
         driver-class-name: com.mysql.jdbc.Driver
